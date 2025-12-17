@@ -1,31 +1,38 @@
+import express from 'express'
+import "dotenv/config"
+import "reflect-metadata"
 import { ApolloServer } from '@apollo/server'
-import { startStandaloneServer } from '@apollo/server/standalone'
+import { buildSchema } from 'type-graphql'
+import { expressMiddleware } from '@as-integrations/express5'
 
-const typeDefs = `
-  type Query {
-    helloWorld: String
-  }
-`
+import { AuthResolver } from './resolvers/auth.resolver'
+import { UserResolver } from './resolvers/user.resolver'
 
 async function main() {
-  const server = new ApolloServer({
-    typeDefs,
-    resolvers: {
-      Query: {
-        helloWorld: () => {
-          return 'Hello World!'
-        }
-      }
-    }
+  const app = express()
+  const port = process.env["PORT"] || 4000
+
+  const schema = await buildSchema({
+    resolvers: [AuthResolver, UserResolver],
+    validate: false,
+    emitSchemaFile: './schema.graphql'
   })
 
-  const { url } = await startStandaloneServer(server, {
-    listen: {
-      port: 4000
-    }
-  });
+  const server = new ApolloServer({
+    schema
+  })
 
-  console.log(`Started server on: ${url}`);
+  await server.start()
+
+  app.use(
+    '/graphql',
+    express.json(),
+    expressMiddleware(server)
+  )
+
+  app.listen({ port }, () => {
+    console.log(`Server started on port ${port}`)
+  })
 }
 
 main();
