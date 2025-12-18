@@ -5,16 +5,17 @@ import { ApolloServer } from '@apollo/server'
 import { buildSchema } from 'type-graphql'
 import { expressMiddleware } from '@as-integrations/express5'
 
+import { buildContext } from './graphql/context'
 import { AuthResolver } from './resolvers/auth.resolver'
 import { UserResolver } from './resolvers/user.resolver'
-import { buildContext } from './graphql/context'
+import { ExpenseCategoryResolver } from './resolvers/expenseCategory.resolver'
 
 async function main() {
   const app = express()
   const port = process.env["PORT"] || 4000
 
   const schema = await buildSchema({
-    resolvers: [AuthResolver, UserResolver],
+    resolvers: [AuthResolver, UserResolver, ExpenseCategoryResolver],
     validate: false,
     emitSchemaFile: './schema.graphql'
   })
