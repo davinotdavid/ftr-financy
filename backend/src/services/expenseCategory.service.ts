@@ -33,4 +33,8 @@ export class ExpenseCategoryService {
       }
     })
   }
+
+  async listExpenseCategories() {
+    return prismaClient.expenseCategory.findMany()
+  }
 }

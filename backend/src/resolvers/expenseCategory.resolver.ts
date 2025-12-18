@@ -1,4 +1,4 @@
-import { Arg, FieldResolver, Mutation, Resolver, Root, UseMiddleware } from "type-graphql";
+import { Arg, FieldResolver, Mutation, Query, Resolver, Root, UseMiddleware } from "type-graphql";
 import { ExpenseCategoryModel } from "../models/expenseCategory.model";
 import { IsAuth } from "../middlewares/auth.middleware";
 import { ExpenseCategoryService } from "../services/expenseCategory.service";
@@ -28,6 +28,11 @@ export class ExpenseCategoryResolver {
     @Arg('id', () => String) id: string
   ): Promise<ExpenseCategoryModel> {
     return this.expenseCategoryService.updateExpenseCategory(id, data)
+  }
+
+  @Query(() => [ExpenseCategoryModel])
+  async listExpenseCategories(): Promise<ExpenseCategoryModel[]> {
+    return this.expenseCategoryService.listExpenseCategories()
   }
 
   @FieldResolver(() => UserModel)
