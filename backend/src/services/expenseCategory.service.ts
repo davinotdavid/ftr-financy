@@ -34,6 +34,20 @@ export class ExpenseCategoryService {
     })
   }
 
+  async deleteExpenseCategory(id: string) {
+    const category = await prismaClient.expenseCategory.findUnique({
+      where: { id }
+    })
+
+    if (!category) {
+      throw new Error('Category not found')
+    }
+
+    return prismaClient.expenseCategory.delete({
+      where: { id }
+    })
+  }
+
   async listExpenseCategories() {
     return prismaClient.expenseCategory.findMany()
   }

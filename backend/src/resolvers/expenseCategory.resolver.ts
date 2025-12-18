@@ -35,6 +35,14 @@ export class ExpenseCategoryResolver {
     return this.expenseCategoryService.listExpenseCategories()
   }
 
+  @Mutation(() => Boolean)
+  async deleteExpenseCategory(
+    @Arg('id', () => String) id: string
+  ): Promise<boolean> {
+    await this.expenseCategoryService.deleteExpenseCategory(id)
+    return true
+  }
+
   @FieldResolver(() => UserModel)
   async owner(@Root() expenseCategory: ExpenseCategoryModel): Promise<UserModel> {
     return this.userService.findUser(expenseCategory.ownerId)
