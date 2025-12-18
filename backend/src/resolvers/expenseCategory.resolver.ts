@@ -2,7 +2,7 @@ import { Arg, FieldResolver, Mutation, Resolver, Root, UseMiddleware } from "typ
 import { ExpenseCategoryModel } from "../models/expenseCategory.model";
 import { IsAuth } from "../middlewares/auth.middleware";
 import { ExpenseCategoryService } from "../services/expenseCategory.service";
-import { CreateCategoryInput } from "../dtos/input/expenseCategory.input";
+import { CreateCategoryInput, UpdateCategoryInput } from "../dtos/input/expenseCategory.input";
 import { GqlUser } from "../graphql/decorators/user.decorator";
 import { User } from "../../prisma/generated/client";
 import { UserModel } from "../models/user.model";
@@ -20,6 +20,14 @@ export class ExpenseCategoryResolver {
     @GqlUser() user: User
   ): Promise<ExpenseCategoryModel> {
     return this.expenseCategoryService.createExpenseCategory(data, user.id)
+  }
+
+  @Mutation(() => ExpenseCategoryModel)
+  async updateExpenseCategory(
+    @Arg('data', () => UpdateCategoryInput) data: UpdateCategoryInput,
+    @Arg('id', () => String) id: string
+  ): Promise<ExpenseCategoryModel> {
+    return this.expenseCategoryService.updateExpenseCategory(id, data)
   }
 
   @FieldResolver(() => UserModel)

@@ -1,5 +1,5 @@
 import { prismaClient } from "../../prisma/prisma";
-import { CreateCategoryInput } from "../dtos/input/expenseCategory.input";
+import { CreateCategoryInput, UpdateCategoryInput } from "../dtos/input/expenseCategory.input";
 
 export class ExpenseCategoryService {
   async createExpenseCategory(data: CreateCategoryInput, ownerId: string) {
@@ -10,6 +10,26 @@ export class ExpenseCategoryService {
         icon: data.icon,
         colour: data.colour,
         ownerId
+      }
+    })
+  }
+
+  async updateExpenseCategory(id: string, data: UpdateCategoryInput) {
+    const category = await prismaClient.expenseCategory.findUnique({
+      where: { id }
+    })
+
+    if (!category) {
+      throw new Error('Category not found')
+    }
+
+    return prismaClient.expenseCategory.update({
+      where: { id },
+      data: {
+        title: data.title,
+        description: data.description,
+        icon: data.icon,
+        colour: data.colour
       }
     })
   }
