@@ -9,13 +9,14 @@ import { buildContext } from './graphql/context'
 import { AuthResolver } from './resolvers/auth.resolver'
 import { UserResolver } from './resolvers/user.resolver'
 import { ExpenseCategoryResolver } from './resolvers/expenseCategory.resolver'
+import { ExpenseResolver } from './resolvers/expense.resolver'
 
 async function main() {
   const app = express()
   const port = process.env["PORT"] || 4000
 
   const schema = await buildSchema({
-    resolvers: [AuthResolver, UserResolver, ExpenseCategoryResolver],
+    resolvers: [AuthResolver, UserResolver, ExpenseCategoryResolver, ExpenseResolver],
     validate: false,
     emitSchemaFile: './schema.graphql'
   })

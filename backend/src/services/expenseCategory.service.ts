@@ -51,4 +51,10 @@ export class ExpenseCategoryService {
   async listExpenseCategories() {
     return prismaClient.expenseCategory.findMany()
   }
+
+  async findExpenseCategoryById(id: string) {
+    return prismaClient.expenseCategory.findUnique({
+      where: { id }
+    })
+  }
 }

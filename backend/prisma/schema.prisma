@@ -15,16 +15,38 @@ model User {
   createdAt         DateTime          @default(now())
   updatedAt         DateTime          @updatedAt
   expenseCategories ExpenseCategory[]
+  expenses          Expense[]
 }
 
 model ExpenseCategory {
-  id          String   @id @default(uuid())
+  id          String    @id @default(uuid())
   title       String
   description String?
   icon        String
   colour      String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
   ownerId     String
-  owner       User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  owner       User      @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  expenses    Expense[]
+}
+
+enum ExpenseType {
+  INCOME
+  EXPENSE
+}
+
+model Expense {
+  id          String      @id @default(uuid())
+  title       String
+  expenseType ExpenseType
+  expenseDate DateTime
+  amount      Int
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  ownerId           String
+  expenseCategoryId String
+  owner             User            @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  expenseCategory   ExpenseCategory @relation(fields: [expenseCategoryId], references: [id], onDelete: Cascade)
 }
