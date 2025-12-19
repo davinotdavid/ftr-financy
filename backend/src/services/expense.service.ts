@@ -17,7 +17,7 @@ export class ExpenseService {
       throw new Error('Category not found!')
     }
 
-    return await prismaClient.expense.create({
+    return prismaClient.expense.create({
       data: {
         ownerId,
         expenseCategoryId: categoryId,
@@ -25,6 +25,14 @@ export class ExpenseService {
         expenseType: data.expenseType,
         amount: data.amount,
         expenseDate: data.expenseDate
+      }
+    })
+  }
+
+  async listByOwner(ownerId: string) {
+    return prismaClient.expense.findMany({
+      where: {
+        ownerId
       }
     })
   }

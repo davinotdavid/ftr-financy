@@ -1,4 +1,5 @@
 import { Field, GraphQLISODateTime, ID, ObjectType } from "type-graphql";
+import { ExpenseModel } from "./expense.model";
 
 @ObjectType()
 export class UserModel {
@@ -20,4 +21,7 @@ export class UserModel {
 
   @Field(() => GraphQLISODateTime)
   updatedAt!: Date
+
+  @Field(() => [ExpenseModel], { nullable: true })
+  expenses?: ExpenseModel[]
 }

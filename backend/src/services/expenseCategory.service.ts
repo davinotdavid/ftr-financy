@@ -57,4 +57,10 @@ export class ExpenseCategoryService {
       where: { id }
     })
   }
+
+  async listExpenseCategoryByOwner(ownerId: string) {
+    return prismaClient.expenseCategory.findMany({
+      where: { ownerId }
+    })
+  }
 }
