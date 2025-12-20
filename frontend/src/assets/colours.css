@@ -1,0 +1,47 @@
+:root {
+  --colour-brand-dark: #124B2B;
+  --colour-brand-base: #1F6F43;
+
+  --colour-gray-800: #111827;
+  --colour-gray-700: #374151;
+  --colour-gray-600: #4B5563;
+  --colour-gray-500: #6B7280;
+  --colour-gray-400: #9CA3AF;
+  --colour-gray-300: #D1D5DB;
+  --colour-gray-200: #E5E7EB;
+  --colour-gray-100: #F8F9FA;
+
+  --colour-black: #000000;
+  --colour-white: #ffffff;
+
+  --colour-danger: #EF4444;
+  --colour-success: #19AD70;
+
+  --colour-blue-dark: #1D4ED8;
+  --colour-blue-base: #2563EB;
+  --colour-blue-light: #DBEAFE;
+
+  --colour-purple-dark: #7E22CE;
+  --colour-purple-base: #9333EA;
+  --colour-purple-light: #F3E8FF;
+
+  --colour-pink-dark: #BE185D;
+  --colour-pink-base: #DB2777;
+  --colour-pink-light: #FCE7F3;
+
+  --colour-red-dark: #B91C1C;
+  --colour-red-base: #DC2626;
+  --colour-red-light: #FEE2E2;
+
+  --colour-orange-dark: #C2410C;
+  --colour-orange-base: #EA580C;
+  --colour-orange-light: #FFEDD5;
+
+  --colour-yellow-dark: #A16207;
+  --colour-yellow-base: #CA8A04;
+  --colour-yellow-light: #F7F3CA;
+
+  --colour-green-dark: #15803D;
+  --colour-green-base: #16A34A;
+  --colour-green-light: #E0FAE9;
+}
