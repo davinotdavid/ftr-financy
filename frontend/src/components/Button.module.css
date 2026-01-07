@@ -1,0 +1,28 @@
+.button {
+  color: var(--colour-white);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-weight: 500;
+
+  &.filled {  
+    background-color: var(--colour-brand-base);
+
+    &:hover {
+      background-color: var(--colour-brand-dark);
+      cursor: pointer;
+    }
+  }
+
+  &.outline {
+    color: var(--colour-gray-700);
+    border-color: var(--colour-gray-300);
+    background-color: transparent;
+
+    &:hover {
+      background-color: var(--colour-gray-200);
+      cursor: pointer;
+    }
+  }
+}

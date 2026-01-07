@@ -1,0 +1,33 @@
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  input[type="checkbox"] {
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--colour-gray-300);
+
+    &:checked {
+      position: relative;
+      background-color: var(--colour-brand-base);
+      border-color: var(--colour-brand-dark);
+
+      &::after {
+        position: absolute;
+        content: "X";
+        color: var(--colour-white);
+        font-size: 0.5rem;
+        font-weight: 700;
+        top: 0.10rem;
+        left: 0.25rem;
+      }
+    }
+  }
+
+  span {
+    font-size: 0.875rem;
+  }
+}

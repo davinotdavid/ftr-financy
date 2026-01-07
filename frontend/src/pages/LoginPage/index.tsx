@@ -1,6 +1,11 @@
 import { Mail, Lock } from "lucide-react";
-import TextField from "@/components/TextField";
+import { Link } from "react-router";
 import styles from "./index.module.css";
+
+// Components
+import TextField from "@/components/TextField";
+import CheckboxInput from "@/components/CheckboxInput";
+import Button from "@/components/Button";
 
 function LoginPage() {
   return (
@@ -26,6 +31,25 @@ function LoginPage() {
           showPasswordIcon
           Icon={Lock}
         />
+        <div className={styles.rememberMeContainer}>
+          <CheckboxInput label="Lembrar-me" />
+          <Link to="#">Recuperar senha</Link>
+        </div>
+
+        <div className={styles.formActionsContainer}>
+          <Button>Entrar</Button>
+
+          <div className={styles.alternativeContainer}>
+            <hr />
+            <span>ou</span>
+            <hr />
+          </div>
+
+          <div className={styles.createAccountContainer}>
+            <p>Ainda não tem uma conta?</p>
+            <Button variant="outline">Criar conta</Button>
+          </div>
+        </div>
       </form>
     </section>
   );
