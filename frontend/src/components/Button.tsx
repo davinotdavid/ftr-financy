@@ -1,13 +1,24 @@
 import type { ButtonHTMLAttributes, ElementType } from "react";
-import style from "./Button.module.css";
+import styles from "./Button.module.css";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   Icon?: ElementType;
   variant?: "filled" | "outline";
+  children?: React.ReactNode;
 }
 
-const Button = ({ Icon, variant = "filled", ...props }: ButtonProps) => {
-  return <button className={`${style.button} ${style[variant]}`} {...props} />;
+const Button = ({
+  Icon,
+  variant = "filled",
+  children,
+  ...props
+}: ButtonProps) => {
+  return (
+    <button className={`${styles.button} ${styles[variant]}`} {...props}>
+      {Icon && <Icon size="18" />}
+      {children}
+    </button>
+  );
 };
 
 export default Button;

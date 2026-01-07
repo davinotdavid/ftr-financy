@@ -1,4 +1,4 @@
-import { Mail, Lock } from "lucide-react";
+import { Mail, Lock, UserRoundPlus } from "lucide-react";
 import { Link } from "react-router";
 import styles from "./index.module.css";
 
@@ -47,7 +47,11 @@ function LoginPage() {
 
           <div className={styles.createAccountContainer}>
             <p>Ainda não tem uma conta?</p>
-            <Button variant="outline">Criar conta</Button>
+            <Link to="/register">
+              <Button variant="outline" Icon={UserRoundPlus}>
+                Criar conta
+              </Button>
+            </Link>
           </div>
         </div>
       </form>
