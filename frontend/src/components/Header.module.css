@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 69px;
+  padding: 1rem 3rem;
+  margin: 0 auto;
+  max-width: 1280px;
+  border-block-end: 1px solid var(--colour-gray-200);
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    list-style: none;
+    padding: 0;
+
+    li {
+      a {
+        text-decoration: none;
+        color: var(--colour-gray-600);
+        font-size: 0.875rem;
+
+        &.active {
+          color: var(--colour-brand-base);
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

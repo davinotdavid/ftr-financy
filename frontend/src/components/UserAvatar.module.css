@@ -1,0 +1,11 @@
+.button {
+  border-radius: 99999px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--colour-gray-300);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--colour-gray-800);
+}
