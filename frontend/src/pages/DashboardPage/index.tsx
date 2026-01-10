@@ -1,6 +1,7 @@
 import styles from "./index.module.css";
 import { Wallet, CircleArrowUp, CircleArrowDown } from "lucide-react";
 import SummaryCard from "./components/SummaryCard";
+import RecentTransactions from "./components/RecentTransactions";
 
 function DashboardPage() {
   return (
@@ -24,6 +25,8 @@ function DashboardPage() {
           R$ 2.180,45
         </SummaryCard>
       </div>
+
+      <RecentTransactions />
     </>
   );
 }
