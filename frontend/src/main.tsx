@@ -9,9 +9,12 @@ import DefaultLayout from "@/layouts/DefaultLayout";
 import AuthLayout from "@/layouts/AuthLayout";
 
 // Pages
-import DashboardPage from "@/pages/DashboardPage";
 import LoginPage from "@/pages/LoginPage";
 import RegisterPage from "@/pages/RegisterPage";
+import DashboardPage from "@/pages/DashboardPage";
+import CategoriesPage from "@/pages/CategoriesPage";
+import TransactionsPage from "@/pages/TransactionsPage";
+import ProfilePage from "@/pages/ProfilePage";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -19,6 +22,9 @@ createRoot(document.getElementById("root")!).render(
       <Routes>
         <Route element={<DefaultLayout />}>
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/transactions" element={<TransactionsPage />} />
+          <Route path="/categories" element={<CategoriesPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Route>
 
         <Route element={<AuthLayout />}>
