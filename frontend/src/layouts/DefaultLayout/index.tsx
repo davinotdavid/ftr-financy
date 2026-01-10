@@ -6,6 +6,7 @@ function DefaultLayout() {
   return (
     <>
       <Header />
+      <hr className={styles.divider} />
       <main className={styles.main}>
         <Outlet />
       </main>

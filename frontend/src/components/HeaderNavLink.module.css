@@ -1,0 +1,18 @@
+.link {
+  text-decoration: none;
+  color: var(--colour-gray-600);
+  font-size: 0.875rem;
+
+  &:hover {
+    color: var(--colour-gray-800);
+  }
+}
+
+.activeLink {
+  color: var(--colour-brand-base);
+  font-weight: 600;
+
+  &:hover {
+    color: var(--colour-brand-dark);
+  }
+}

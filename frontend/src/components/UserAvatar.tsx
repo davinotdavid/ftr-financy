@@ -8,7 +8,7 @@ interface UserAvatarProps {
 
 function UserAvatar({ children }: UserAvatarProps) {
   return (
-    <Link to="#">
+    <Link to="/profile">
       <button className={styles.button}>{children}</button>
     </Link>
   );

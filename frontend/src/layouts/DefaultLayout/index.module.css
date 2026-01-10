@@ -1,3 +1,11 @@
 main {
   background-color: var(--colour-gray-100);
+  padding: 3rem;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.divider {
+  border: none;
+  border-block-end: 1px solid var(--colour-gray-200);
 }

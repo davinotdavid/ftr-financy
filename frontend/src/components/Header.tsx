@@ -1,7 +1,7 @@
-import { NavLink } from "react-router";
 import styles from "./Header.module.css";
 import Logo from "./Logo";
 import UserAvatar from "./UserAvatar";
+import HeaderNavLink from "./HeaderNavLink";
 
 function Header() {
   return (
@@ -9,13 +9,13 @@ function Header() {
       <Logo />
       <ul>
         <li>
-          <NavLink to="/dashboard">Dashboard</NavLink>
+          <HeaderNavLink to="/dashboard">Dashboard</HeaderNavLink>
         </li>
         <li>
-          <NavLink to="/transactions">Transações</NavLink>
+          <HeaderNavLink to="/transactions">Transações</HeaderNavLink>
         </li>
         <li>
-          <NavLink to="/categories">Categorias</NavLink>
+          <HeaderNavLink to="/categories">Categorias</HeaderNavLink>
         </li>
       </ul>
       <UserAvatar>CT</UserAvatar>
