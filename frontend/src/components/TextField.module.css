@@ -51,6 +51,7 @@
     font-size: 0.75rem;
     color: var(--colour-gray-500);
     text-align: start;
+    margin-block-start: 0.5rem;
   }
 
   &:focus-within {

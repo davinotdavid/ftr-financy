@@ -3,6 +3,7 @@
   border-block-end: 1px solid var(--colour-gray-200);
 
   .headerContent {
+    position: relative;
     display: flex;
     justify-content: space-between;
     height: 69px;
@@ -11,6 +12,11 @@
     max-width: 1280px;
 
     ul {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-inline-end: -50%;
+      transform: translate(-50%, -50%);
       display: flex;
       align-items: center;
       gap: 1.25rem;

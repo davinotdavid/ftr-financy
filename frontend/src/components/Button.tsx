@@ -3,6 +3,7 @@ import styles from "./Button.module.css";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   Icon?: ElementType;
+  iconColor?: string;
   variant?: "filled" | "outline";
   size?: "small" | "normal";
   children?: React.ReactNode;
@@ -10,6 +11,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button = ({
   Icon,
+  iconColor,
   variant = "filled",
   size = "normal",
   children,
@@ -20,7 +22,7 @@ const Button = ({
       className={`${styles.button} ${styles[variant]} ${styles[size]}`}
       {...props}
     >
-      {Icon && <Icon size="18" />}
+      {Icon && <Icon size="18" color={iconColor} />}
       {children}
     </button>
   );
