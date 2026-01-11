@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--colour-gray-600);
+  margin-block-end: 2rem;
+
+  h1 {
+    color: var(--colour-gray-800);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}
