@@ -1,0 +1,11 @@
+.section {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  padding-block-start: 1.25rem;
+  background-color: var(--colour-white);
+  border-radius: 12px;
+  border: 1px solid var(--colour-gray-200);
+  margin-block-end: 2rem;
+}
