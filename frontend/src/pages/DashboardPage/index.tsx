@@ -1,7 +1,9 @@
 import styles from "./index.module.css";
 import { Wallet, CircleArrowUp, CircleArrowDown } from "lucide-react";
+
 import SummaryCard from "./components/SummaryCard";
 import RecentTransactions from "./components/RecentTransactions";
+import CategoriesPanel from "./components/CategoriesPanel";
 
 function DashboardPage() {
   return (
@@ -26,7 +28,10 @@ function DashboardPage() {
         </SummaryCard>
       </div>
 
-      <RecentTransactions />
+      <div className={styles.mainContentContainer}>
+        <RecentTransactions />
+        <CategoriesPanel />
+      </div>
     </>
   );
 }

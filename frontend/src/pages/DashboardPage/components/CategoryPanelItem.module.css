@@ -1,0 +1,17 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+
+  .itemsCount {
+    color: var(--colour-gray-600);
+    font-size: 0.875rem;
+    margin-inline-end: 1rem;
+  }
+
+  .amount {
+    color: var(--colour-gray-800);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+}

@@ -1,14 +1,16 @@
-.section {
-  flex: 1;
-  background-color: var(--colour-white);
+.container {
+  width: 379px;
   border-radius: 12px;
+  background-color: var(--colour-white);
   border: 1px solid var(--colour-gray-200);
+  align-self: flex-start;
 
   header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1.25rem 0.75rem 1.25rem 1.5rem;
+    border-block-end: 1px solid var(--colour-gray-200);
 
     h3 {
       text-transform: uppercase;
@@ -18,7 +20,7 @@
       color: var(--colour-gray-500);
     }
 
-    .seeAllLink {
+    a {
       display: flex;
       align-items: center;
       gap: 0.25rem;
@@ -33,27 +35,13 @@
     }
   }
 
-  footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.25rem 1.5rem;
+  .contentContainer {
+    padding: 1.5rem;
+  }
+}
 
-    button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--colour-brand-base);
-      gap: 0.25rem;
-      font-size: 0.875rem;
-      font-weight: 500;
-      background: none;
-      border: none;
-      cursor: pointer;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+@media (max-width: 1200px) {
+  .container {
+    width: 100%;
   }
 }

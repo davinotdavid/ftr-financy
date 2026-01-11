@@ -30,17 +30,6 @@
 
   .categoryContainer {
     padding-inline: 3rem;
-
-    .category {
-      padding: 0.25rem 0.75rem;
-      background-color: var(--colour-gray-200);
-      width: min-content;
-      border-radius: 9999px;
-
-      p {
-        font-size: 0.875rem;
-      }
-    }
   }
 
   .amountContainer {

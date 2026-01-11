@@ -1,5 +1,6 @@
 import { CircleArrowUp, CircleArrowDown } from "lucide-react";
 import styles from "./RecentTransactionItem.module.css";
+import Tag from "@/components/Tag";
 
 interface RecentTransactionItemProps {
   Icon: React.ElementType;
@@ -28,9 +29,12 @@ function RecentTransactionItem({
         <p className={styles.date}>{transactionDate}</p>
       </div>
       <div className={styles.categoryContainer}>
-        <div className={styles.category}>
-          <p>{category}</p>
-        </div>
+        <Tag
+          backgroundColor="var(--colour-gray-200)"
+          textColor="var(--colour-gray-800)"
+        >
+          {category}
+        </Tag>
       </div>
       <div className={styles.amountContainer}>
         <p>
