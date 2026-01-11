@@ -18,6 +18,7 @@
     border: 1px solid var(--colour-gray-300);
     padding: 0.875rem 0.75rem;
     border-radius: 8px;
+    background-color: var(--colour-white);
 
     .icon {
       color: var(--colour-gray-400);

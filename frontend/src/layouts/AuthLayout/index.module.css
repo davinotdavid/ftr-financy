@@ -8,4 +8,5 @@
 .main {
   margin: 0 auto;
   max-width: 448px;
+  box-sizing: content-box;
 }

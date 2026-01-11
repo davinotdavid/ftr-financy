@@ -1,0 +1,43 @@
+.section {
+  background-color: var(--colour-white);
+  border-radius: 12px;
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr 112px 200px 136px 200px 120px;
+    padding: 1.25rem 1.5rem;
+
+    h4 {
+      color: var(--colour-gray-500);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+  }
+
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    font-size: 0.875rem;
+    color: var(--colour-gray-700);
+
+    .resultsText {
+      font-weight: 600;
+    }
+
+    .paginationButtons {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+
+  .textRight {
+    text-align: right;
+  }
+
+  .textCenter {
+    text-align: center;
+  }
+}
