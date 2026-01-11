@@ -1,0 +1,21 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  background-color: var(--colour-white);
+  border-radius: 8px;
+  border: 1px solid var(--colour-gray-300);
+  color: var(--colour-gray-700);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  &.active {
+    background-color: var(--colour-brand-base);
+    color: var(--colour-white);
+    border-color: transparent;
+  }
+}
